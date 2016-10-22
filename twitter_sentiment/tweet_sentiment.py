@@ -1,8 +1,8 @@
 import sys
 import json
 
+#TODO: fix
 def hw():
-    
     # open sentiment file store words in dictionary
 	sent = {}
 	with open(sys.argv[1],'r') as s:
@@ -15,15 +15,12 @@ def hw():
     		for line in t:
     			sent_val = 0
     			data = json.loads(line)
-    			#if 'text' not in data: continue;
+    			if 'text' not in data: continue;
      			tweet_string = data['text'].lower()
     			for d in sent.keys():
     				if d in tweet_string:
     					sent_val += float(sent[d])
 
-
-    			#print 'Sentiment: %f, %s' % (sent_val,tweet_string)
-    		   	#print 'Sentiment: %f' % sent_val
     			print(sent_val)
 
 

@@ -10,10 +10,8 @@ def hw():
             data = json.loads(line)
             if 'text' not in data: continue;
             tweet_string = data['text']
-            #print tweet_string
             tweet_words = tweet_string.split()
             for w in tweet_words:
-                #print(w)
                 if w in sent_new:
                     sent_new[w] = sent_new[w]+1
                 else:
@@ -24,7 +22,7 @@ def hw():
     for w in sent_new.keys():
         print(w, ': %1.4f' % (sent_new[w]/float(keycount)))
 
-
+#usage: frequency.py twitter_stream.txt 
 def main():
     tweet_file = open(sys.argv[1])
     hw()

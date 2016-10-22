@@ -36,6 +36,7 @@ def hw():
 def lines(fp):
     print(len(fp.readlines()))
 
+# usage: frequency.py sentiment.txt twitter_stream.txt
 def main():
     sent_file = open(sys.argv[1])
     tweet_file = open(sys.argv[2])

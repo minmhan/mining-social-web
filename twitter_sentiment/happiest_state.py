@@ -16,7 +16,6 @@ def hw():
             sent_val = 0
             data = json.loads(line)
             #if 'user' not in data: continue;
-            #print data['user']['location']
 
             if 'text' not in data: continue;
             if 'place' not in data: continue;
@@ -31,7 +30,6 @@ def hw():
             
             #if 'coordinates' not in data: continue;
             #if data['coordinates'] is None: continue;
-            #print data['coordinates']
 
             tweet_string = data['text']
             for d in sent.keys():
@@ -42,13 +40,12 @@ def hw():
             
 
         #for v in state_sentiment.keys():
-        #   print '{0} {1}'.format(v,state_sentiment[v])
         #highest = max(state_sentiment.values())
-        #print [k for k,v in state_sentiment.items() if v== highest][0]
+        #print([k for k,v in state_sentiment.items() if v== highest][0])
       
         print(max(state_sentiment, key=lambda x: state_sentiment.get(x)))
         
-
+#usage: sentiment.txt twitter_stream.txt
 def main():
     hw()
 

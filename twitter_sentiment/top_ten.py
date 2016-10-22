@@ -8,8 +8,6 @@ def hw():
             data = json.loads(line)
             if 'entities' not in data: continue;
             if len(data['entities']['hashtags']) == 0: continue;
-            #print data['entities']['hashtags'][0].keys()
-            #print '------------'
             for dic in data['entities']['hashtags']:
                 if not dic['text'] in hashtag:
                     hashtag[dic['text']] = 1
@@ -22,7 +20,7 @@ def hw():
         print(ht, '%.1f' % hashtag[ht])
             
             
-
+# usage: happiest_state.py sentiment.txt twitter_stream.txt
 def main():
     hw()
 
